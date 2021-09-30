@@ -37,7 +37,7 @@ function showCart() {
 
     // TODO: Create a TD for the delete link, quantity,  and the item
     let deleteEl = document.createElement("td");
-    deleteEl.innerText = "delete";
+    deleteEl.innerText = "X";
     deleteEl.setAttribute("id", cart.items[i].product)
     deleteEl.addEventListener("click", removeItemFromCart)
     let quantityEl = document.createElement("td");

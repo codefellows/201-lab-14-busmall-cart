@@ -50,12 +50,12 @@ function addSelectedItemToCart(event) {
 function updateCounter() {
   let navEl = document.getElementById("itemCount")
   let numberOfDifferentItemsInCart = cart.items.length;
-  navEl.innerText = numberOfDifferentItemsInCart;
+  navEl.innerText = `Items in Cart: ${numberOfDifferentItemsInCart}`;
 
   let itemConfirmation = document.createElement("p");
   itemConfirmation.innerText = `Added to cart successfully!`;
   itemConfirmation.setAttribute("id", "confirmation-id");
-  navEl.append(itemConfirmation);
+  document.getElementById("cartContents").append(itemConfirmation);
 }
 
 // TODO: As you add items into the cart, show them (item & quantity) in the cart preview div
