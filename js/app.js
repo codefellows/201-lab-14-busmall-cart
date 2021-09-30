@@ -1,5 +1,5 @@
 'use strict';
-
+// min is here
 // Cart constructor.
 const Cart = function(items) {
   // this.items is an array of CartItem instances.
