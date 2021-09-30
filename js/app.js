@@ -8,15 +8,28 @@ const Cart = function(items) {
 
 Cart.prototype.addItem = function(product, quantity) {
   // TODO: Fill in this instance method to create a new CartItem and add it to this.items
+  let newCartItem = new CartItem(product, quantity);
+  this.items.push(newCartItem);
 };
 
 Cart.prototype.saveToLocalStorage = function() {
   // TODO: Fill in this instance method to save the contents of the cart to localStorage
+  localStorage.setItem("cart", JSON.stringify(cart));
 };
 
 Cart.prototype.removeItem = function(item) {
   // TODO: Fill in this instance method to remove one item from the cart.
   // Note: You will have to decide what kind of parameter to pass in here!
+  // item is a string (it is the product name "product")
+  let tempCartItems = [];
+  for (let i = 0; i < cart.items.length; i++) {
+    if (cart.items[i].product == item) {
+      //don't push it into the new cart list
+    } else {
+      tempCartItems.push(cart.items[i]);
+    }
+  }
+  cart.items = tempCartItems;
 };
 
 const CartItem = function(product, quantity) {

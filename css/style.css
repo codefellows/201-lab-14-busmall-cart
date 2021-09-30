@@ -1,1 +1,18 @@
 /* TODO: Make it awesome */
+
+#confirmation-id {
+    animation-name: confirmation-animation;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    color: white;
+}
+
+@keyframes confirmation-animation {
+    0% {
+        color: black;
+    }
+
+    100% {
+        color: white;
+    }
+}
