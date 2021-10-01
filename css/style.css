@@ -1,9 +1,59 @@
 /* TODO: Make it awesome */
 body {
-    margin: 50px;
+    margin: 100px;
+    background-color: rgb(200, 214, 241);
     border: solid 3px blue;
-    border-radius: 5px;
-    height: 400px;
+    border-radius: 30px;
+    width: 960px;
+    margin-left: 300px;
     font-size: large;
-    font-family: sans-serif;
+    font-family:initial;
+}
+
+main, section, footer, header{
+    background-color: rgb(222, 243, 129);
+    padding: 20px;
+    border-radius: 30px;
+}
+
+ul li, fieldset {
+    padding: 5px;
+    font-size: 25px;
+}
+
+footer p {
+    text-align: center;
+}
+
+th {
+    padding: 3px;
+}
+
+
+select, input[type = number] {
+    height: 25px;
+}
+select {
+    height:30px;
+}
+#submit {
+    background-color: red;
+}
+
+input[type=submit] {
+    height: 40px;
+    width: 200px;
+    font-size: 25px;
+    background-color: rgb(81, 138, 155);
+    border-radius: 15px;
+    margin: 20px;
+}
+
+input[type=submit]:hover {
+    height: 50px;
+    width: 200px;
+    font-size: 25px;
+    background-color: rgb(59, 233, 59);
+    border-radius: 15px;
+    margin: 20px;
 }
