@@ -46,10 +46,18 @@ function showCart() {
     let itemData = document.createElement('td');
     itemData.innerText = cart.items[i].product;
     itemData.setAttribute('class', cart.items[i].product);
+    let pictureData = document.createElement('img');
+    for(let img = 0; img < Product.allProducts.length; img++){
+      if(cart.items[i].product === Product.allProducts[img].name){
+        pictureData.setAttribute('src',Product.allProducts[img].filePath);
+        break;
+      }
+    }
     
     tableRow.appendChild(deleteButton);
     tableRow.appendChild(quantityData);
     tableRow.appendChild(itemData);
+    tableRow.appendChild(pictureData);
 
     clearTable.appendChild(tableRow);
   }
@@ -61,8 +69,12 @@ function showCart() {
 
 function removeItemFromCart(event) {
   let table = event.target.classList.contains('remover');
+  let proDuct =cart.items[parseInt(event.target.id)].product;
+  let qunt = cart.items[parseInt(event.target.id)].quantity;
+  console.log(proDuct,qunt);
+
   if (table){
-    cart.removeItem(cart.items[parseInt(event.target.id)].product);
+    cart.removeItem(cart.items[parseInt(event.target.id)].product,cart.items[parseInt(event.target.id)].quantity);
     cart.saveToLocalStorage();
   }
 

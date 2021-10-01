@@ -71,3 +71,7 @@ ol, li{
     margin-top:15px;
     border: thin solid black;
 }
+
+img{
+    width: 30px;
+}

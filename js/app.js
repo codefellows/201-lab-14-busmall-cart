@@ -23,14 +23,18 @@ Cart.prototype.saveToLocalStorage = function() {
   localStorage.setItem('cart', modifiedCartArray);
 };
 
-Cart.prototype.removeItem = function(item) {
+Cart.prototype.removeItem = function(item,quantity) {
   // TODO: Fill in this instance method to remove one item from the cart.
   // Note: You will have to decide what kind of parameter to pass in here!
   let modifiedCart = [];
+  let roundOne = true
   for (let i = 0; i < this.items.length; i++){
-    if (item === this.items[i].product){
-      console.log('hello');
-      continue;
+    if (item === this.items[i].product && quantity === this.items[i].quantity){
+      if(roundOne===true){
+        roundOne =false;
+        continue;
+      }
+      modifiedCart.push(this.items[i]);
     }
     else{
       modifiedCart.push(this.items[i]);
