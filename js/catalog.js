@@ -37,24 +37,50 @@ function handleSubmit(e) {
 }
 
 // DONE DONE: Add the selected item and quantity to the cart
+// ADDED FEATURE to increment if item is already in cart.
 function addSelectedItemToCart(event) {
   console.log(event.target);
   for (let i = 0; i < event.target[1].length; i++) {
     if (event.target[1][i].selected === true) {
       let selectedName = event.target[1][i].value;
       let selectedQuantity = event.target[2].value;
-      for (let i = 0; i < Product.allProducts.length; i++) {
-        if (selectedName == Product.allProducts[i].name) {
-          cart.addItem(Product.allProducts[i], selectedQuantity)
+
+      // check if item is already in cart
+      if (cart.items.length === 0) {
+        for (let i = 0; i < Product.allProducts.length; i++) {
+          if (selectedName == Product.allProducts[i].name) {
+            cart.addItem(Product.allProducts[i], selectedQuantity)
+          }
+        }
+      } else {
+        // go through cart
+        let inCart = false;
+
+        for (let i = 0; i < cart.items.length; i++) {
+          console.log('here')
+
+          if (cart.items[i].product.name === selectedName) {
+            let amount = Number(cart.items[i].quantity)
+            amount += Number(selectedQuantity);
+            cart.items[i].quantity = amount;
+            inCart = true;
+          }
+        }
+        if (!inCart) {
+          for (let i = 0; i < Product.allProducts.length; i++) {
+            if (selectedName == Product.allProducts[i].name) {
+              cart.addItem(Product.allProducts[i], selectedQuantity)
+            }
+          }
+
         }
       }
+
     }
+    // DONE DONE: suss out the item picked from the select list
+    // DONE DONE: get the quantity
+    // DONE DONE: using those, add one item to the Cart
   }
-
-
-  // DONE DONE: suss out the item picked from the select list
-  // DONE DONE: get the quantity
-  // DONE DONE: using those, add one item to the Cart
 }
 
 // DONE DONE: Update the cart count in the header nav with the number of items in the Cart
