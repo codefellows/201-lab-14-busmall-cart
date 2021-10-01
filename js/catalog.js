@@ -3,7 +3,8 @@
 'use strict';
 
 // Set up an empty cart for use on this page.
-const cart = new Cart([]);
+const cart = new Cart([JSON.parse(localStorage.getItem('cart')) || []);
+
 
 // On screen load, we call this method to put all of the busmall options
 // (the things in the Product.allProducts array) into the drop down list.
@@ -26,8 +27,11 @@ function populateForm() {
 function handleSubmit(event) {
   // TODO: Prevent the page from reloading
   event.preventDefault();
+  let productName = event.target[1].value
+  let quantity = event.target[2].value
   // // Do all the things ...
-  addSelectedItemToCart(event);
+  addSelectedItemToCart(productName, quantity);
+  // addSelectedItemToCart(event);
   cart.saveToLocalStorage();
   updateCounter();
   updateCartPreview(event);
@@ -35,13 +39,22 @@ function handleSubmit(event) {
 }
 
 // TODO: Add the selected item and quantity to the cart
-function addSelectedItemToCart(event) {
+function addSelectedItemToCart(name, quantity)
+// function addSelectedItemToCart(event) {
   // TODO: suss out the item picked from the select list
-    let selectedItems = event.target.items.value;
+    // let selectedItems = event.target.items.value;
+    for (let i = 0; i < Product.allProducts.length; i++) {
+      let currentProduct = Product.allProducts[i];
+      if (name === currentProduct.name) {
+        cart.addItem(currentProduct, quantity);
+        break;
+      }
+    }
   // TODO: get the quantity
-    let selectedQuantity = event.target.quantity.value;
+    // let selectedQuantity = event.target.quantity.value;
   // TODO: using those, add one item to the Cart
-  cart.addItem(selectedItems, selectedQuantity);
+  // cart.addItem(selectedItems, selectedQuantity);
+  // cart.addItem(name, quantity);
 }
 
 
