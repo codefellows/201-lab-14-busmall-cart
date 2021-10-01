@@ -34,6 +34,8 @@ function handleSubmit(event) {
   updateCounter();
   updateCartPreview(event);
 
+  document.getElementById("catalog").reset();
+
 }
 
 // TODO: Add the selected item and quantity to the cart
