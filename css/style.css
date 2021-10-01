@@ -1,1 +1,75 @@
 /* TODO: Make it awesome */
+* body{
+    width: 960px;
+    margin: auto;
+}
+
+body + header{
+    display: inline-block;
+    border-bottom: black solid 1px;
+}
+body nav{
+    display: inline-block;
+    float: right;
+    position: relative;
+    bottom: 33px;
+}
+
+header > h1{
+    font-size: 35pt;
+    font-family:fantasy;
+    background-color: beige;
+    color: black;
+}
+
+body header{
+    border-bottom: black 1px solid;
+}
+
+div.card  h1{
+    font-size: 25pt;
+    padding-top: 30px;
+    font-family: sans-serif;
+    background-color: white;
+    color: black;
+} 
+
+header li{
+    font-size: 15pt;
+    float: right;
+    padding: 0px 6px;
+
+}
+
+.copy {
+    padding: 10px 0px;
+}
+
+.copy li{
+    padding: 5px 0px;
+    list-style-type: circle;
+    font-size: 17pt;
+}
+.copy  ol{
+    
+}
+
+#catalog{
+    font-size: 20pt;
+    text-align: center;
+}
+
+
+#cartContents{
+    text-align: center;
+}
+
+footer{
+    padding-top: 100px;
+    text-align: center;
+}
+
+td{
+    font-size: 15pt;;
+}
+
