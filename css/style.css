@@ -50,9 +50,19 @@ header li{
     list-style-type: circle;
     font-size: 17pt;
 }
-.copy  ol{
-    
+#cart td:last-child:hover {
+  background-color: beige;
+  color: red;
 }
+#cart td {
+  border: solid thin black;
+  padding: .5em;
+}
+#cart a {
+  font-weight: bold;
+  cursor: pointer;
+}
+
 
 #catalog{
     font-size: 20pt;
