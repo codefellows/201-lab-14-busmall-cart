@@ -65,28 +65,23 @@ function updateCounter() {
 
   
   const itemCount = document.getElementById('itemCount');
-  const itemEl = document.createElement('div');
-  itemEl.textContent = cartCount;
-  itemCount.appendChild(itemEl);
+  itemCount.textContent = cartCount;
 }
 
 // TODO: As you add items into the cart, show them (item & quantity) in the cart preview div
 function updateCartPreview() {
+  
   // TODO: Get the item and quantity from the form
-  const item = document.getElementById('items').value;
-  const quantity = document.getElementById('quantity').value;
-  // let itemQuantity = [item, quantity];
-  let cartForm = document.getElementById('cart')
-
   // TODO: Add a new element to the cartContents div with that information
-  let cartEl = document.createElement('div');
-  // let elementItem =
-  cartEl.innerText = item;
-  let cartElement = document.createElement('div');
-  cartElement.innerHTML = quantity;
-  cartForm.appendChild(cartEl);
-  console.log(cartElement);
-  cartForm.appendChild(cartElement);
+  let reviewItem = items.value;
+  let reviewQuantity = quantity.value;
+  let cartContents = document.getElementById('cartContents');
+  let cartEl = document.createElement('p');
+
+  cartEl.innerText = `${reviewItem}, ${reviewQuantity}`;
+  cartContents.appendChild(cartEl);
+  console.log(reviewItem, reviewQuantity);
+
 
 }
 

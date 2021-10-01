@@ -1,1 +1,9 @@
 /* TODO: Make it awesome */
+body {
+    margin: 50px;
+    border: solid 3px blue;
+    border-radius: 5px;
+    height: 400px;
+    font-size: large;
+    font-family: sans-serif;
+}

@@ -25,10 +25,10 @@ function clearCart() {}
 function showCart() {
 
   // TODO: Find the table body
-
+  // Look up document.quesrySelector to grab tbody
   // TODO: Iterate over the items in the cart
   // TODO: Create a TR
-  // TODO: Create a TD for the delete link, quantity,  and the item
+  // TODO: Create a TD for the delete link, quantity, and the item
   // TODO: Add the TR to the TBODY and each of the TD's to the TR
 
 }

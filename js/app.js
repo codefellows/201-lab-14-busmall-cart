@@ -14,7 +14,8 @@ Cart.prototype.addItem = function(product, quantity) {
   const newProduct = new CartItem(product, quantity);
 
 
-  this.items.push[newProduct];
+  this.items.push(newProduct);
+  console.log(this.items)
   cartCount++;
   console.log(cartCount);
   console.log(newProduct);
@@ -22,6 +23,8 @@ Cart.prototype.addItem = function(product, quantity) {
 
 Cart.prototype.saveToLocalStorage = function() {
   // TODO: Fill in this instance method to save the contents of the cart to localStorage
+  localStorage.setItem('cart', JSON.stringify(this.items));
+
 };
 
 Cart.prototype.removeItem = function(item) {
