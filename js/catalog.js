@@ -37,6 +37,11 @@ function handleSubmit(event) {
   cart.saveToLocalStorage();
   updateCounter(items.value, quantity.value);
   updateCartPreview(items.value, quantity.value);
+  let comfirmation = document.createElement('div');
+  comfirmation.innerText = 'Added To Cart';
+  comfirmation.setAttribute('id','order');
+  let parentEl = document.getElementById('cartContents');
+  parentEl.appendChild(comfirmation);
 
 }
 

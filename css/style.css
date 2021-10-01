@@ -1,1 +1,73 @@
 /* TODO: Make it awesome */
+
+input{
+    display: block;
+    margin: 5px auto;
+    width: 200px;
+
+}
+
+select{
+    display: block;
+    margin: 5px;
+}
+
+#order{
+    font-size: 1em;
+    animation-name: grow;
+    animation-duration: .5s;
+}
+
+#cart-container{
+    margin: auto;
+}
+
+table#cart{
+    width: 200px;
+    border: thin solid black;
+    margin-left: 36vw;
+    
+}
+
+@keyframes grow {
+    0%{
+        font-size: 1em;
+    }
+    50%{
+        font-size: 3em;
+    }
+    100%{
+        font-size: 1em;
+    }
+
+}
+
+.confirmed{
+    animation-name: grow;
+    animation-duration: 1s;
+}
+
+body{
+    background-color: gray;
+    text-align: center;
+}
+
+header{
+    background-color: yellow;
+    border: thick solid black;
+}
+
+select{
+    display: block;
+    margin: 5px auto;
+}
+
+ol, li{
+    margin:5px 0;
+}
+
+#catalog{
+    display: block;
+    margin-top:15px;
+    border: thin solid black;
+}

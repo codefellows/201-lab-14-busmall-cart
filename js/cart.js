@@ -34,21 +34,22 @@ function showCart() {
   for(let i = 0; i < cart.items.length; i++){
     let tableRow = document.createElement('tr');
     
-    let itemData = document.createElement('td');
-    itemData.innerText = cart.items[i].product;
-    itemData.setAttribute('class', cart.items[i].product);
-
-    let quantityData = document.createElement('td'); 
-    quantityData.innerText = cart.items[i].quantity;
-    
     let deleteButton = document.createElement('td');
     deleteButton.innerText = 'X';
     deleteButton.classList.add('remover');
     deleteButton.setAttribute('id', i);
-
-    tableRow.appendChild(itemData);
-    tableRow.appendChild(quantityData);
+    
+    
+    let quantityData = document.createElement('td'); 
+    quantityData.innerText = cart.items[i].quantity;
+    
+    let itemData = document.createElement('td');
+    itemData.innerText = cart.items[i].product;
+    itemData.setAttribute('class', cart.items[i].product);
+    
     tableRow.appendChild(deleteButton);
+    tableRow.appendChild(quantityData);
+    tableRow.appendChild(itemData);
 
     clearTable.appendChild(tableRow);
   }
@@ -72,5 +73,52 @@ function removeItemFromCart(event) {
 
 }
 
+function userInfo(){
+  let parentEl = document.getElementById('cart-container');
+  console.log(parentEl);
+
+  let formEl = document.createElement('form');
+  formEl.setAttribute('id','form')
+  let fieldEl = document.createElement('fieldset');
+
+  let infoTextArray = ['Name','Street','City','State'];
+  for (let i =0; i<infoTextArray.length; i++){
+    let labelEl = document.createElement('label');
+    let inputEl = document.createElement('input');
+    labelEl.setAttribute('for',infoTextArray[i]);
+    labelEl.innerText = infoTextArray[i];
+    inputEl.setAttribute('type','text');
+    fieldEl.appendChild(labelEl);
+    fieldEl.appendChild(inputEl);
+
+  }
+  let infoNumArray = ['Zip','Phone','Credit'];
+  for (let i= 0; i<infoNumArray.length; i++){
+    let labelEl = document.createElement('label');
+    let inputEl = document.createElement('input');
+    labelEl.setAttribute('for',infoNumArray[i]);
+    labelEl.innerText = infoNumArray[i];
+    inputEl.setAttribute('type','number');
+    fieldEl.appendChild(labelEl);
+    fieldEl.appendChild(inputEl);
+  }
+  let button = document.createElement('button');
+  button.setAttribute('id','button');
+  button.setAttribute('type','submit')
+  button.innerText = 'Submit';
+  fieldEl.appendChild(button);  
+  formEl.appendChild(fieldEl);
+  parentEl.appendChild(formEl);
+  formEl.addEventListener('submit',submitHandler);
+}
+
+function submitHandler (event){
+  event.preventDefault();
+  let button = document.getElementById('button');
+  button.setAttribute('class','confirmed');
+  button.innerText = 'Confirmed';
+}
+
+userInfo();
 // This will initialize the page and draw the cart on screen
 renderCart();
