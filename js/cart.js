@@ -1,6 +1,6 @@
 /* global Cart */
 'use strict';
-
+let tableBody;
 // Create an event listener so that when the delete link is clicked, the removeItemFromCart method is invoked.
 const table = document.getElementById('cart');
 table.addEventListener('click', removeItemFromCart);
@@ -19,26 +19,50 @@ function renderCart() {
 }
 
 // TODO: Remove all of the rows (tr) in the cart table (tbody)
-function clearCart() { }
-document.getElementById('cart').getElementsByTagNameNS('tbody').innerHTML = '';
+function clearCart() {
+  document.getElementById('cart').getElementsByTagNameNS('tbody').innerHTML = '';
+
+}
+
 // TODO: Fill in the <tr>'s under the <tbody> for each item in the cart
 function showCart() {
-
   // TODO: Find the table body
   // Look up document.quesrySelector to grab tbody
-  // TODO: Iterate over the items in the cart
-  // TODO: Create a TR
-  // TODO: Create a TD for the delete link, quantity, and the item
+  tableBody = document.querySelector('tbody');
+  // Done: Iterate over the items in the cart
+  for (let i = 0; i < cart.items.length; i++) {
+    let itemInfo = cart.items[i];
+    // TODO: Create a TR
+    let rowEl = document.createElement('tr');
+    // TODO: Create a TD for the delete link, quantity, and the item
+    let linkEl = document.createElement('td');
+    let quantityEl = document.createElement('td');
+    let nameEl = document.createElement('td');
+
+    linkEl.innerText = 'X';
+    quantityEl.innerText = itemInfo.quantity;
+    nameEl.innerText = itemInfo.product.name;
+
+    rowEl.appendChild(linkEl);
+    rowEl.appendChild(nameEl);
+    rowEl.appendChild(quantityEl);
+
+  }
   // TODO: Add the TR to the TBODY and each of the TD's to the TR
+  tableBody.appendChild(rowEl);
 
 }
 
 function removeItemFromCart(event) {
 
   // TODO: When a delete link is clicked, use cart.removeItem to remove the correct item
-  cart.removeItem(event.target.id);
+  let productName = event.target.id
+  if (productName) {
+    cart.removeItem(productName);
+  }
+
   // TODO: Save the cart back to local storage
-  cart.
+
   // TODO: Re-draw the cart table
 
 }
