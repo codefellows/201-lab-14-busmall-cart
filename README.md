@@ -5,6 +5,6 @@ Team Names
 - Martha
 - Natalija
 
-
 1st round - Martha/driver  , Sarah and Natalija/ Navigators
 2nd round - Sarah/driver  , Martha and Natalija/ Navigators
+3rd round - Natalija/driver , Martha and Sarah/ Navigators
